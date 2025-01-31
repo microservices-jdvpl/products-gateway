@@ -19,10 +19,18 @@ export class AuthController {
   }
   @Post('login')
   login(@Body() body: LoginUserDto) {
-    return this.client.send('auth.login.user', body);
+    return this.client.send('auth.login.user', body).pipe(
+      catchError((error) => {
+        throw new RpcException(error);
+      }),
+    );
   }
   @Post('verify')
   verify(@Body() body: any) {
-    return this.client.send('auth.verify.user', body);
+    return this.client.send('auth.verify.user', body).pipe(
+      catchError((error) => {
+        throw new RpcException(error);
+      }),
+    );
   }
 }
