@@ -11,7 +11,7 @@ Este proyecto es un gateway de cliente para microservicios, diseñado para manej
 
 `docker run -d --name nats-server -p 4222:4222 -p 8222:8222 nats`
 
-## run docker with dockerfile.prod
+## run docker with dockerfile.prod for prod
 ```
   docker build -f dockerfile.prod  -t client-gateway . 
 ```
