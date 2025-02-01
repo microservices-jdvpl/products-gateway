@@ -4,8 +4,14 @@ Este proyecto es un gateway de cliente para microservicios, diseñado para manej
 
 ### dev
 
-1.levantar los demoas microservicios 2. npm run dev
+- 1.levantar los demoas microservicios 
+- 2. npm run dev
 
 ## correr nats
 
 `docker run -d --name nats-server -p 4222:4222 -p 8222:8222 nats`
+
+## run docker with dockerfile.prod
+```
+  docker build -f dockerfile.prod  -t client-gateway . 
+```
